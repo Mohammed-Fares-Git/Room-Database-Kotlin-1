@@ -21,4 +21,8 @@ class Repository (private val db: AppartementDatabase) {
         appartementDao.delete(appartement)
     }
 
+    fun loadAllByIds(userId: Int): Flow<List<Appartement>> {
+        return appartementDao.loadAllByIds(userId)
+    }
+
 }
