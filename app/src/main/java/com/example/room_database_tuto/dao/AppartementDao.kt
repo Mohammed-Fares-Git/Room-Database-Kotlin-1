@@ -13,6 +13,9 @@ interface AppartementDao {
     @Query("SELECT * FROM ${AppartementDatabase.TABLE_APPARTEMENTS_NAME}")
     fun getAll(): Flow<List<Appartement>>
 
+    @Query("SELECT * FROM ${AppartementDatabase.TABLE_APPARTEMENTS_NAME} WHERE ${AppartementDatabase.ID_COLUMN_NAME} IN (:userIds)")
+    fun loadAllByIds(userIds: IntArray): Flow<List<Appartement>>
+
     @Insert
     suspend fun insertAll(vararg appartement: Appartement)
 
