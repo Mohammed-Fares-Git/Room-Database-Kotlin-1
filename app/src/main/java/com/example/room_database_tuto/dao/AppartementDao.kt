@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AppartementDao {
-    @Query("SELECT * FROM ${AppartementDatabase.TABLE_NAME}")
+    @Query("SELECT * FROM ${AppartementDatabase.TABLE_APPARTEMENTS_NAME}")
     fun getAll(): Flow<List<Appartement>>
 
     @Insert

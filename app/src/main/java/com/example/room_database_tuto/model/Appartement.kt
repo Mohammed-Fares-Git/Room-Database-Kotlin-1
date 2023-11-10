@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.room_database_tuto.db.AppartementDatabase
 
-@Entity(tableName = AppartementDatabase.TABLE_NAME)
+@Entity(tableName = AppartementDatabase.TABLE_APPARTEMENTS_NAME)
 data class Appartement (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = AppartementDatabase.ID_COLUMN_NAME)

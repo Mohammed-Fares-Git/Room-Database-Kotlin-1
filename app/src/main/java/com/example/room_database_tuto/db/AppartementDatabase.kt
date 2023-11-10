@@ -1,8 +1,17 @@
 package com.example.room_database_tuto.db
 
-class AppartementDatabase {
+import androidx.room.Database
+import com.example.room_database_tuto.dao.AppartementDao
+import com.example.room_database_tuto.model.Appartement
+
+@Database(entities = [Appartement::class], version = AppartementDatabase.DB_VERSION)
+abstract class AppartementDatabase {
+
+    abstract fun appartementDao(): AppartementDao
+
     companion object {
-        const val TABLE_NAME = "appatements_table"
+        const val DB_VERSION = 1
+        const val TABLE_APPARTEMENTS_NAME = "appatements_table"
         const val ID_COLUMN_NAME = "_id"
         const val OFFER_COLUMN_NAME = "_offer"
         const val PARKING_COLUMN_NAME = "_avec_parking"
