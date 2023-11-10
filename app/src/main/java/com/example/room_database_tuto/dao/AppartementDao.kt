@@ -17,7 +17,7 @@ interface AppartementDao {
     fun loadAllByIds(userIds: IntArray): Flow<List<Appartement>>
 
     @Insert
-    suspend fun insertAll(vararg appartement: Appartement)
+    suspend fun insertAll(appartement: Appartement)
 
     @Delete
     suspend fun delete(appartement: Appartement)
