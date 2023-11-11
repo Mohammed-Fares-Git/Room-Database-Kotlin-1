@@ -43,19 +43,7 @@ abstract class AppartementDatabase: RoomDatabase(){
             }
         }
 
-        fun getInstance2(context: Context): AppartementDatabase {
-            synchronized(LOCK) {
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppartementDatabase::class.java, APPARTEMENT_DB_NAME
-                    )
-                        .fallbackToDestructiveMigration()
-                        .build()
-                }
-                return instance as AppartementDatabase
-            }
-        }
+
 
 
     }
