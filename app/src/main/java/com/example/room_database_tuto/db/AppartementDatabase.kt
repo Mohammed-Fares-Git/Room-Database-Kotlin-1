@@ -19,7 +19,6 @@ abstract class AppartementDatabase: RoomDatabase(){
 
     companion object {
         const val DB_VERSION = 2
-        const val ADD_MESSAGE = "lala nadu !"
         const val TABLE_APPARTEMENTS_NAME = "appatements_table"
         const val APPARTEMENT_DB_NAME = "appatement_db"
         const val ID_COLUMN_NAME = "_id"
