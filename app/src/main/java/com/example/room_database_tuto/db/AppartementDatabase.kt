@@ -18,7 +18,7 @@ abstract class AppartementDatabase: RoomDatabase(){
     abstract fun appartementDao(): AppartementDao
 
     companion object {
-        const val DB_VERSION = 1
+        const val DB_VERSION = 2
         const val ADD_MESSAGE = "lala nadu !"
         const val TABLE_APPARTEMENTS_NAME = "appatements_table"
         const val APPARTEMENT_DB_NAME = "appatement_db"
