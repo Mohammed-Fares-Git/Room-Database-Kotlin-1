@@ -23,7 +23,7 @@ class TestingViewModel(val repository: Repository): ViewModel() {
 
                 appartementsFlow.collect { appartement ->
                     delay(1000L)
-                    _textStateFlow.value = appartements.toString()
+                    _textStateFlow.value = appartement.toString()
                 }
             }
         }

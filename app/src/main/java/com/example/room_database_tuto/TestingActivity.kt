@@ -32,10 +32,20 @@ class TestingActivity : AppCompatActivity() {
 
 
 
+
+
+
     }
 
     override fun onStart() {
         super.onStart()
+
+        runBlocking {
+            for (i in 1..5) {
+                delay(1000L)
+                binding.testText.text = "$i"
+            }
+        }
 
 
         val a1 = Appartement("extra", 100, true, "image")
