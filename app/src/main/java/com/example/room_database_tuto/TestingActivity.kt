@@ -10,6 +10,7 @@ import com.example.room_database_tuto.databinding.ActivityTestingBinding
 import com.example.room_database_tuto.db.AppartementDatabase
 import com.example.room_database_tuto.model.Appartement
 import com.example.room_database_tuto.repositry.Repository
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
@@ -18,10 +19,20 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class TestingActivity : AppCompatActivity() {
     lateinit var binding: ActivityTestingBinding
+
+
+    @Inject
     lateinit var testVM: TestingViewModel
+
+    @Inject
+    lateinit var repository: Repository
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTestingBinding.inflate(layoutInflater)
@@ -53,11 +64,10 @@ class TestingActivity : AppCompatActivity() {
         val a3 = Appartement("basic", 80, true, "image")
         val a4 = Appartement("extra", 150, false, "image")
 
-        val repository = Repository(AppartementDatabase.getInstance(this))
 
 
-        testVM = ViewModelProvider(this, TestinViewModelFactory(repository))
-            .get(TestingViewModel::class.java)
+
+
 
 
         lifecycleScope.launch {

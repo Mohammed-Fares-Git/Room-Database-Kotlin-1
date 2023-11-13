@@ -5,8 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.room_database_tuto.repositry.Repository
+import javax.inject.Inject
 
-class TestinViewModelFactory(private val repository: Repository): ViewModelProvider.Factory {
+class TestinViewModelFactory @Inject constructor(private val repository: Repository): ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(TestingViewModel::class.java)) {

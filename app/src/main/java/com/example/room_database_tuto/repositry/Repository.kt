@@ -1,10 +1,12 @@
 package com.example.room_database_tuto.repositry
 
+import androidx.room.Insert
 import com.example.room_database_tuto.db.AppartementDatabase
 import com.example.room_database_tuto.model.Appartement
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class Repository (private val db: AppartementDatabase) {
+class Repository @Inject constructor(private val db: AppartementDatabase) {
 
     private val appartementDao = db.appartementDao()
 
